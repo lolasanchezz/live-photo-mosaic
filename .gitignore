@@ -2,3 +2,4 @@
 photos
 .DS_Store
 __pycache__
+photos-exported.json

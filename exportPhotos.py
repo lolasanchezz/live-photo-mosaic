@@ -10,19 +10,19 @@ from PIL import Image
 def export():
     ## ONLY works in terminal. vscode doesn't request permissions
     today = date.today()
-    start_date = date.today() - datetime.timedelta(days=70)
+    start_date = date.today() - datetime.timedelta(days=900)
     start_date_format = start_date.strftime("%Y-%m-%d")
     today_format = today.strftime("%Y-%m-%d")
 
     ##just clearing directory before running
-    if os.path.isdir("./photos"):
-        shutil.rmtree("./photos")
-    os.mkdir("./photos")
+    if os.path.isdir("./photos-tmp"):
+        shutil.rmtree("./photos-tmp")
+    os.mkdir("./photos-tmp")
 
-    subprocess.run(["osxphotos", "export", "/Users/lolasanchez/school/ds2/sem2proj/photos", 
+    subprocess.run(["osxphotos", "export", "/Users/lolasanchez/school/ds2/live-photo-mosaic/photos-tmp", 
                     "--only-photos",
                     "--added-in-last",
-                    "5w",
+                    "30w",
                     
                     "--verbose",
                  "--use-photokit",
@@ -40,16 +40,13 @@ def export():
                     "{counter}"
                     ])
 
-    for photo in os.listdir("./photos"):
+    for photo in os.listdir("./photos-tmp"):
         if 'preview' not in photo:
-            os.remove(os.path.abspath('./photos/' + photo))
-        else:
-            old_path = os.path.abspath('./photos/' + photo)
-            new_path = old_path.replace('_preview', '') 
-            im = Image.open(old_path)
-            im = im.resize((50, 50), Image.Resampling.LANCZOS)
-            im.save(new_path)
-            os.remove(old_path)
+            os.remove(os.path.abspath('./photos-tmp/' + photo))
+    
+    if os.path.isdir("./photos"):
+        shutil.rmtree("./photos")
+    os.rename('./photos-tmp', './photos')
     return 1
 
 
