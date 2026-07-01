@@ -1,7 +1,15 @@
-Lola Sanchez  
-5/12/26  
-Intensive Data Science II  
-Ms. Pan
+note: this was my official write up for this project as a school report. 
+that's why it so formal.
+
+the heart of the project/main script is photostream2.py. before running it for the first time,
+run exportPhotos.py to get your local macos photos in a local directory.
+
+exportPhotos.py, however, will only work on macos due to the fact that it uses
+osxphotos, a util for getting photos out of the photo app. if you want to 
+run the photostream2.py script on something other than a mac, you'll have to do
+something else to get the photos in your local directory under /photos.
+
+
 
 # *live-photo-mosaic*
 
@@ -29,17 +37,12 @@ A program that composes a live video stream from local Photo App photos by color
 
 Final Product:
 
-### **![]['/example-photos/oli.png']**
+### **![]["/example-photos/oli.png"]**
 
 
 
-## [AVI to MP4 video.mp4](https://drive.google.com/file/d/1fpl46eLjtBFzIGn2gfm_UnHh_bumVIoV/preview) \- Video demonstration
-
-## 
-
-## 
-
-## 
+## [recorded demo](https://drive.google.com/file/d/1fpl46eLjtBFzIGn2gfm_UnHh_bumVIoV/preview)
+ 
 
 ## **Discussion**
 
