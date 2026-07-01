@@ -37,7 +37,7 @@ A program that composes a live video stream from local Photo App photos by color
 
 Final Product:
 
-!(example photo)[example-photos/oli.png]
+![example photo](example-photos/oli.png)
 
 
 
